@@ -14,4 +14,14 @@ public class SortJaggedByMaxValue extends AbstractSortStrategy {
             }
         }
     }
+
+    public int getMaxElement(int[] arr) {
+        int max = arr[0];
+        for (int value : arr) {
+            if (value > max) {
+                max = value;
+            }
+        }
+        return max;
+    }
 }

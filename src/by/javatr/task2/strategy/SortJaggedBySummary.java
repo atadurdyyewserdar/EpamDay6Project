@@ -14,4 +14,12 @@ public class SortJaggedBySummary extends AbstractSortStrategy {
             }
         }
     }
+
+    public int getSumOfRow(int[] arr) {
+        int sum = 0;
+        for (int value : arr) {
+            sum += value;
+        }
+        return sum;
+    }
 }
