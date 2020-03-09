@@ -1,6 +1,9 @@
 package by.javatr.task2.runner;
 
-import by.javatr.task2.util.Logic;
+import by.javatr.task2.service.Sort;
+import by.javatr.task2.strategy.SortJaggedByMaxValue;
+import by.javatr.task2.strategy.SortJaggedByMinValue;
+import by.javatr.task2.strategy.SortJaggedBySummary;
 
 import java.util.Arrays;
 
@@ -18,10 +21,19 @@ public class Main {
         arr[8] = new int[]{5, 6,45,3,46,443,4};
         arr[9] = new int[]{5, 6,345,345,2,3};
 
-        for (int[] arrays: arr)
-        {
-            System.out.print(Arrays.toString(arrays) + " ");
-            System.out.println("-Max val= " + Logic.getMaxElement(arrays) + "  -Sum of row=" + Logic.getSumOfRow(arrays));
+        try {
+            Sort sort = new Sort(new SortJaggedByMaxValue());
+            sort.sortArray(arr);
+            System.out.println(Arrays.deepToString(arr));
+            sort.changeStrategy(new SortJaggedByMinValue());
+            sort.sortArray(arr);
+            System.out.println(Arrays.deepToString(arr));
+            sort.changeStrategy(new SortJaggedBySummary());
+            sort.sortArray(arr);
+            System.out.println(Arrays.deepToString(arr));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 }

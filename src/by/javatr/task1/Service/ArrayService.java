@@ -56,5 +56,4 @@ public class ArrayService {
         }
         return new Array(FileLogic.readDataInteger(dir));
     }
-
 }

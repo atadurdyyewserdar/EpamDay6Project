@@ -1,7 +1,4 @@
 package by.javatr.task1.util;
-
-import by.javatr.task1.entity.Array;
-
 import java.util.ArrayList;
 import java.util.List;
 
